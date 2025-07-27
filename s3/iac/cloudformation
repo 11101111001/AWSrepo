@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "== deploy cloudformation"
+
+STACK="simple-cloud-cfn"
+PROFILE="AdministratorAccess-952346071138"
+REGION="us-east-1"
+
+export AWS_PROFILE=$PROFILE
+
+aws cloudformation deploy \
+  --template-file template.yaml \
+  --region $REGION \
+  --stack-name $STACK
